@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceRoller.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Rolador de Dados"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Image
+                x:Name="diceImage"
+                Source="dice_d4.png"
+                SemanticProperties.Description="A dice with the number 1 facing up"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="6"
+                x:Name="numeroTela"
+                FontSize="80"
+                HorizontalOptions="Center" />
+
+            <Picker
+                HorizontalOptions="Center"
+                x:Name="selecionarNumeroLados"
+                Title="Quantidade de dados">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>20</x:Int32>
+                        <x:Int32>100</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Rolar o dado"
+                HorizontalOptions="Center"
+                Clicked="OnRollClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
